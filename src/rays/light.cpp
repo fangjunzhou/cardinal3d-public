@@ -43,6 +43,7 @@ Light_Sample Rect_Light::sample(Vec3 from) const {
     float cos_theta = dir.y;
     float squared_dist = dir.norm_squared();
     float dist = std::sqrt(squared_dist);
+    cos_theta /= dist;
 
     ret.direction = dir / dist;
     ret.distance = dist;
